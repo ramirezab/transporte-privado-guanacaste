@@ -86,8 +86,24 @@ h3 { font-size: 1.28rem; color: var(--deep); }
 .nav__links a:hover { color: var(--teal); }
 .nav__cta { background: var(--teal); color: #fff !important; padding: 10px 22px; border-radius: 999px; }
 .nav__cta:hover { background: var(--ocean); }
+.nav__right { display: flex; align-items: center; gap: 14px; }
 .nav__toggle { display: none; background: none; border: 0; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
 .nav__toggle span { width: 24px; height: 2px; background: var(--deep); transition: .3s; }
+
+/* Toggle ES / EN */
+.lang-toggle {
+  display: inline-flex; align-items: center;
+  background: var(--bg-alt); border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px;
+}
+.lang-toggle button {
+  border: 0; background: transparent; cursor: pointer;
+  font-family: var(--head); font-size: .8rem; font-weight: 600; letter-spacing: .04em;
+  color: var(--muted); padding: 6px 13px; border-radius: 999px;
+  transition: background .25s ease, color .25s ease;
+}
+.lang-toggle button:hover { color: var(--ocean); }
+.lang-toggle button.is-active { background: var(--teal); color: #fff; box-shadow: 0 4px 12px -6px rgba(0,109,119,.6); }
 
 /* ===== Hero ===== */
 .hero { position: relative; min-height: 92vh; display: flex; align-items: center; color: #fff; overflow: hidden; }

@@ -11,11 +11,12 @@
   <meta property="og:title" content="Transporte Privado en Guanacaste · Costa Rica" />
   <meta property="og:description" content="Traslados cómodos y seguros desde el aeropuerto de Liberia y tours a las mejores playas. Reserva por WhatsApp." />
   <meta property="og:locale" content="es_CR" />
+  <meta property="og:locale:alternate" content="en_US" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a39a'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle'%3E🌴%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -27,18 +28,24 @@
         <span class="brand__mark">🌴</span>
         <span class="brand__text">
           <strong>Guanacaste</strong>
-          <em>Transporte Privado</em>
+          <em data-i18n="brand.sub">Transporte Privado</em>
         </span>
       </a>
       <nav class="nav__links" aria-label="Navegación principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#flota">Vehículos</a>
-        <a href="#destinos">Destinos</a>
-        <a href="#reservas" class="nav__cta">Reservar</a>
+        <a href="#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="#flota" data-i18n="nav.vehicles">Vehículos</a>
+        <a href="#destinos" data-i18n="nav.destinations">Destinos</a>
+        <a href="#reservas" class="nav__cta" data-i18n="nav.book">Reservar</a>
       </nav>
-      <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav__right">
+        <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="es" class="is-active" aria-pressed="true">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -52,9 +59,9 @@
     </div>
 
     <div class="container hero__inner">
-      <p class="hero__eyebrow">Costa Rica · Provincia de Guanacaste</p>
-      <h1 class="hero__title">Transporte privado para descubrir el <span>Pacífico de Guanacaste</span></h1>
-      <p class="hero__lead">
+      <p class="hero__eyebrow" data-i18n="hero.eyebrow">Costa Rica · Provincia de Guanacaste</p>
+      <h1 class="hero__title" data-i18n="hero.title">Transporte privado para descubrir el <span>Pacífico de Guanacaste</span></h1>
+      <p class="hero__lead" data-i18n="hero.lead">
         Traslados cómodos y seguros desde el <strong>Aeropuerto Internacional de Liberia (LIR)</strong>,
         recogida en su hotel y tours a las playas más hermosas. Viaje con un conductor local,
         a su ritmo y sin complicaciones.
@@ -62,14 +69,14 @@
       <div class="hero__actions">
         <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
            target="_blank" rel="noopener" class="btn btn--wa btn--lg">
-          <span class="wa-icon" aria-hidden="true">💬</span> Reservar por WhatsApp
+          <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="hero.cta1">Reservar por WhatsApp</span>
         </a>
-        <a href="#flota" class="btn btn--ghost">Ver vehículos</a>
+        <a href="#flota" class="btn btn--ghost" data-i18n="hero.cta2">Ver vehículos</a>
       </div>
       <ul class="hero__stats">
-        <li><strong>3</strong><span>Vehículos disponibles</span></li>
-        <li><strong>4 + 1</strong><span>Pasajeros + chófer por viaje</span></li>
-        <li><strong>24/7</strong><span>Reservas por WhatsApp</span></li>
+        <li><strong>3</strong><span data-i18n="hero.stat1">Vehículos disponibles</span></li>
+        <li><strong>4 + 1</strong><span data-i18n="hero.stat2">Pasajeros + chófer por viaje</span></li>
+        <li><strong>24/7</strong><span data-i18n="hero.stat3">Reservas por WhatsApp</span></li>
       </ul>
     </div>
     <a href="#servicios" class="hero__scroll" aria-label="Desplazarse">⌄</a>
@@ -79,40 +86,40 @@
   <section class="section" id="servicios">
     <div class="container">
       <div class="section__head section__head--center">
-        <span class="kicker">Qué ofrecemos</span>
-        <h2>Un servicio pensado para que solo se preocupe por disfrutar</h2>
-        <p class="section__sub">Nos encargamos de cada traslado con puntualidad, seguridad y un trato cercano.</p>
+        <span class="kicker" data-i18n="serv.kicker">Qué ofrecemos</span>
+        <h2 data-i18n="serv.title">Un servicio pensado para que solo se preocupe por disfrutar</h2>
+        <p class="section__sub" data-i18n="serv.sub">Nos encargamos de cada traslado con puntualidad, seguridad y un trato cercano.</p>
       </div>
       <div class="features">
         <div class="feature">
           <div class="feature__icon">✈️</div>
-          <h3>Traslados al aeropuerto</h3>
-          <p>Recogida y entrega en el Aeropuerto Internacional de Liberia (LIR) o Daniel Oduber, con seguimiento de su vuelo.</p>
+          <h3 data-i18n="serv.f1.title">Traslados al aeropuerto</h3>
+          <p data-i18n="serv.f1.p">Recogida y entrega en el Aeropuerto Internacional de Liberia (LIR) o Daniel Oduber, con seguimiento de su vuelo.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">🏨</div>
-          <h3>Recogida en su hotel</h3>
-          <p>Lo esperamos directamente en la recepción de su hotel, villa o Airbnb, a la hora que mejor le convenga.</p>
+          <h3 data-i18n="serv.f2.title">Recogida en su hotel</h3>
+          <p data-i18n="serv.f2.p">Lo esperamos directamente en la recepción de su hotel, villa o Airbnb, a la hora que mejor le convenga.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">🏖️</div>
-          <h3>Tours a las playas</h3>
-          <p>Tamarindo, Conchal, Playas del Coco, Flamingo, Sámara y más. Diseñamos la ruta a su medida.</p>
+          <h3 data-i18n="serv.f3.title">Tours a las playas</h3>
+          <p data-i18n="serv.f3.p">Tamarindo, Conchal, Playas del Coco, Flamingo, Sámara y más. Diseñamos la ruta a su medida.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">🧭</div>
-          <h3>Conductor local</h3>
-          <p>Conocimiento de la zona, recomendaciones de confianza y un viaje tranquilo por toda la provincia.</p>
+          <h3 data-i18n="serv.f4.title">Conductor local</h3>
+          <p data-i18n="serv.f4.p">Conocimiento de la zona, recomendaciones de confianza y un viaje tranquilo por toda la provincia.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">❄️</div>
-          <h3>Comodidad garantizada</h3>
-          <p>Vehículos con aire acondicionado, asientos confortables y espacio amplio para su equipaje.</p>
+          <h3 data-i18n="serv.f5.title">Comodidad garantizada</h3>
+          <p data-i18n="serv.f5.p">Vehículos con aire acondicionado, asientos confortables y espacio amplio para su equipaje.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">🕒</div>
-          <h3>Horarios flexibles</h3>
-          <p>Viajes a su ritmo, paradas cuando lo desee y disponibilidad para reservas en cualquier momento.</p>
+          <h3 data-i18n="serv.f6.title">Horarios flexibles</h3>
+          <p data-i18n="serv.f6.p">Viajes a su ritmo, paradas cuando lo desee y disponibilidad para reservas en cualquier momento.</p>
         </div>
       </div>
     </div>
@@ -122,52 +129,52 @@
   <section class="section section--alt" id="flota">
     <div class="container">
       <div class="section__head section__head--center">
-        <span class="kicker">Nuestra flota</span>
-        <h2>Hasta 3 vehículos a su disposición</h2>
-        <p class="section__sub">Cada vehículo viaja con <strong>hasta 4 pasajeros + chófer</strong>, ideal para parejas, familias y grupos pequeños.</p>
+        <span class="kicker" data-i18n="fleet.kicker">Nuestra flota</span>
+        <h2 data-i18n="fleet.title">Hasta 3 vehículos a su disposición</h2>
+        <p class="section__sub" data-i18n="fleet.sub">Cada vehículo viaja con <strong>hasta 4 pasajeros + chófer</strong>, ideal para parejas, familias y grupos pequeños.</p>
       </div>
       <div class="fleet">
         <article class="vcard">
           <div class="vcard__media"><img src="assets/car-misuv.jpg" alt="Ilustración de un mini SUV" loading="lazy" /></div>
           <div class="vcard__body">
-            <div class="vcard__badge">Vehículo 1</div>
-            <h3>Mini SUV</h3>
-            <p>Cómodo y ágil, ideal para parejas y familias que quieren moverse con facilidad por la zona.</p>
+            <div class="vcard__badge"><span data-i18n="fleet.vehicle">Vehículo</span> 1</div>
+            <h3 data-i18n="fleet.v1.title">Mini SUV</h3>
+            <p data-i18n="fleet.v1.p">Cómodo y ágil, ideal para parejas y familias que quieren moverse con facilidad por la zona.</p>
             <ul class="vcard__specs">
-              <li><span>👥</span> 4 pasajeros + chófer</li>
-              <li><span>🧳</span> Espacio para equipaje</li>
-              <li><span>❄️</span> Aire acondicionado</li>
+              <li><span>👥</span> <span data-i18n="fleet.spec.pax">4 pasajeros + chófer</span></li>
+              <li><span>🧳</span> <span data-i18n="fleet.spec.luggage">Espacio para equipaje</span></li>
+              <li><span>❄️</span> <span data-i18n="fleet.spec.ac">Aire acondicionado</span></li>
             </ul>
           </div>
         </article>
         <article class="vcard vcard--featured">
           <div class="vcard__media"><img src="assets/car-sedan1.jpg" alt="Ilustración de un sedán" loading="lazy" /></div>
           <div class="vcard__body">
-            <div class="vcard__badge">Vehículo 2</div>
-            <h3>Sedán</h3>
-            <p>Confort y estilo para traslados al aeropuerto y desplazamientos cómodos entre hoteles.</p>
+            <div class="vcard__badge"><span data-i18n="fleet.vehicle">Vehículo</span> 2</div>
+            <h3 data-i18n="fleet.v2.title">Sedán</h3>
+            <p data-i18n="fleet.v2.p">Confort y estilo para traslados al aeropuerto y desplazamientos cómodos entre hoteles.</p>
             <ul class="vcard__specs">
-              <li><span>👥</span> 4 pasajeros + chófer</li>
-              <li><span>🧳</span> Maletero cómodo</li>
-              <li><span>❄️</span> Aire acondicionado</li>
+              <li><span>👥</span> <span data-i18n="fleet.spec.pax">4 pasajeros + chófer</span></li>
+              <li><span>🧳</span> <span data-i18n="fleet.spec.trunk">Maletero cómodo</span></li>
+              <li><span>❄️</span> <span data-i18n="fleet.spec.ac">Aire acondicionado</span></li>
             </ul>
           </div>
         </article>
         <article class="vcard">
           <div class="vcard__media"><img src="assets/car-sedan2.jpg" alt="Ilustración de un sedán" loading="lazy" /></div>
           <div class="vcard__body">
-            <div class="vcard__badge">Vehículo 3</div>
-            <h3>Sedán</h3>
-            <p>Una opción más para grupos pequeños: un traslado tranquilo, puntual y seguro.</p>
+            <div class="vcard__badge"><span data-i18n="fleet.vehicle">Vehículo</span> 3</div>
+            <h3 data-i18n="fleet.v3.title">Sedán</h3>
+            <p data-i18n="fleet.v3.p">Una opción más para grupos pequeños: un traslado tranquilo, puntual y seguro.</p>
             <ul class="vcard__specs">
-              <li><span>👥</span> 4 pasajeros + chófer</li>
-              <li><span>🧳</span> Maletero cómodo</li>
-              <li><span>❄️</span> Aire acondicionado</li>
+              <li><span>👥</span> <span data-i18n="fleet.spec.pax">4 pasajeros + chófer</span></li>
+              <li><span>🧳</span> <span data-i18n="fleet.spec.trunk">Maletero cómodo</span></li>
+              <li><span>❄️</span> <span data-i18n="fleet.spec.ac">Aire acondicionado</span></li>
             </ul>
           </div>
         </article>
       </div>
-      <p class="fleet__note">¿Necesita un <strong>4x4</strong>? Pregunte por disponibilidad. Toda reserva se confirma por WhatsApp.</p>
+      <p class="fleet__note" data-i18n="fleet.note">¿Necesita un <strong>4x4</strong>? Pregunte por disponibilidad. Toda reserva se confirma por WhatsApp.</p>
     </div>
   </section>
 
@@ -175,9 +182,9 @@
   <section class="section" id="destinos">
     <div class="container">
       <div class="section__head section__head--center">
-        <span class="kicker">Destinos populares</span>
-        <h2>Las playas que puede conocer con nosotros</h2>
-        <p class="section__sub">Algunos de los rincones más bellos del Pacífico Norte de Costa Rica.</p>
+        <span class="kicker" data-i18n="dest.kicker">Destinos populares</span>
+        <h2 data-i18n="dest.title">Las playas que puede conocer con nosotros</h2>
+        <p class="section__sub" data-i18n="dest.sub">Algunos de los rincones más bellos del Pacífico Norte de Costa Rica.</p>
       </div>
       <div class="gallery">
         <figure class="gallery__item gallery__item--lg">
@@ -194,11 +201,11 @@
         </figure>
         <figure class="gallery__item">
           <img src="assets/tamarindo-wide.jpg" alt="Caballos al atardecer en la playa de Tamarindo" loading="lazy" />
-          <figcaption>Atardeceres del Pacífico</figcaption>
+          <figcaption data-i18n="dest.cap.sunset">Atardeceres del Pacífico</figcaption>
         </figure>
         <figure class="gallery__item gallery__item--lg">
           <img src="assets/hero-tamarindo.jpg" alt="Playa de arena dorada y palmeras en Guanacaste" loading="lazy" />
-          <figcaption>Costa de Guanacaste</figcaption>
+          <figcaption data-i18n="dest.cap.coast">Costa de Guanacaste</figcaption>
         </figure>
       </div>
     </div>
@@ -207,16 +214,16 @@
   <!-- ===== PANORAMA divider ===== -->
   <section class="pano" aria-hidden="true">
     <div class="pano__img"></div>
-    <div class="pano__text">"Pura vida" en cada kilómetro</div>
+    <div class="pano__text" data-i18n="pano.text">"Pura vida" en cada kilómetro</div>
   </section>
 
   <!-- ===== RESERVAS / CONTACTO ===== -->
   <section class="section section--reservas" id="reservas">
     <div class="container reservas">
       <div class="reservas__content">
-        <span class="kicker kicker--light">Reservas</span>
-        <h2>Reserve su viaje en un solo mensaje</h2>
-        <p class="reservas__sub">
+        <span class="kicker kicker--light" data-i18n="res.kicker">Reservas</span>
+        <h2 data-i18n="res.title">Reserve su viaje en un solo mensaje</h2>
+        <p class="reservas__sub" data-i18n="res.sub">
           <strong>Samuel Ramírez Ampié</strong> es el encargado de gestionar las reservas de su viaje.
           Escríbale por WhatsApp con su fecha, número de pasajeros y destino, y recibirá una
           respuesta con todos los detalles.
@@ -226,15 +233,15 @@
             <span class="reservas__avatar">SR</span>
             <div>
               <strong>Samuel Ramírez Ampié</strong>
-              <em>Encargado de reservas</em>
+              <em data-i18n="res.role">Encargado de reservas</em>
             </div>
           </div>
           <a href="tel:+50688015925" class="reservas__number">+506 8801 5925</a>
           <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste.%20Fecha%3A%20___%20%7C%20Pasajeros%3A%20___%20%7C%20Destino%3A%20___"
              target="_blank" rel="noopener" class="btn btn--wa btn--lg btn--block">
-            <span class="wa-icon" aria-hidden="true">💬</span> Escribir por WhatsApp
+            <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="res.cta">Escribir por WhatsApp</span>
           </a>
-          <p class="reservas__hint">Toca el botón para abrir WhatsApp con un mensaje listo para enviar.</p>
+          <p class="reservas__hint" data-i18n="res.hint">Toca el botón para abrir WhatsApp con un mensaje listo para enviar.</p>
         </div>
       </div>
     </div>
@@ -247,16 +254,16 @@
         <span class="brand__mark">🌴</span>
         <div>
           <strong>Guanacaste · Transporte Privado</strong>
-          <em>Traslados y tours en el Pacífico de Costa Rica</em>
+          <em data-i18n="footer.sub">Traslados y tours en el Pacífico de Costa Rica</em>
         </div>
       </div>
       <a href="https://wa.me/50688015925" target="_blank" rel="noopener" class="footer__wa">💬 WhatsApp: +506 8801 5925</a>
-      <p class="footer__credits">
+      <p class="footer__credits" data-i18n="footer.credits">
         Fotografías de playas: Wikimedia Commons (CC BY / CC BY-SA) — Jarle Naustvik,
         Tamarindowiki, Guacamolio, Rômulo Gama Ferreira, El Pantera, WClarke.
         Ilustraciones de vehículos generadas a medida. Video aéreo: Todd Swint (YouTube).
       </p>
-      <p class="footer__copy">© <span id="year"></span> Transporte Privado Guanacaste · Costa Rica.</p>
+      <p class="footer__copy">© <span id="year"></span> <span data-i18n="footer.copy">Transporte Privado Guanacaste · Costa Rica.</span></p>
     </div>
   </footer>
 
@@ -264,6 +271,6 @@
   <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
      target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">💬</a>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
