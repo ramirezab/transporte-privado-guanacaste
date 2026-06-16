@@ -12,9 +12,9 @@
     'nav.destinations': 'Destinations',
     'nav.book': 'Book',
     'tour.back': '← Back to destinations',
-    'tour.cta': 'Book this tour on WhatsApp',
+    'tour.cta': 'Book transport on WhatsApp',
     'tour.about': 'About the destination',
-    'tour.highlights': 'Highlights',
+    'tour.highlights': 'Destination highlights',
     'tour.gallery.kicker': 'Gallery',
     'tour.others': 'Other destinations',
     'tour.others.title': 'Keep exploring Costa Rica',
@@ -37,8 +37,8 @@
   const $ = (id) => document.getElementById(id);
   const waLink = (name) => {
     const msg = lang === 'en'
-      ? `Hi Samuel, I'd like to book the ${name} tour. Date: ___ | Passengers: ___`
-      : `Hola Samuel, me gustaría reservar el tour a ${name}. Fecha: ___ | Pasajeros: ___`;
+      ? `Hi Samuel, I'd like to book transport to ${name}. Date: ___ | Passengers: ___`
+      : `Hola Samuel, me gustaría reservar transporte a ${name}. Fecha: ___ | Pasajeros: ___`;
     return `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -98,7 +98,7 @@
     const link = waLink(name);
     $('tHeroCta').href = link;
     $('tBottomCta').href = link;
-    $('tCtaTitle').textContent = lang === 'en' ? `Ready to visit ${name}?` : `¿Listo para conocer ${name}?`;
+    $('tCtaTitle').textContent = lang === 'en' ? `Ready to head to ${name}?` : `¿Listo para ir a ${name}?`;
 
     // Otros destinos
     $('tOthers').innerHTML = ORDER.filter((s) => s !== slug).map((s) => {
@@ -209,15 +209,30 @@
     });
   }
 
-  // ===== Parallax del hero + año =====
+  // ===== Parallax + storytelling del hero =====
   const bg = $('theroBg');
+  const heroInner = document.querySelector('.thero__inner');
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
-    if (y < window.innerHeight) bg.style.transform = `translateY(${y * 0.35}px) scale(1.08)`;
+    const vh = window.innerHeight;
+    if (y < vh) {
+      bg.style.transform = `translateY(${y * 0.35}px) scale(1.08)`;
+      if (heroInner && !reduceMotion) {
+        heroInner.style.transform = `translateY(${y * 0.22}px)`;
+        heroInner.style.opacity = String(Math.max(0, 1 - y / (vh * 0.72)));
+      }
+    }
   }, { passive: true });
   $('year').textContent = new Date().getFullYear();
 
   render();
+
+  // Entrada del hero (transición por clase: visible aunque no anime / pestaña oculta)
+  setTimeout(() => {
+    const ti = document.querySelector('.thero__inner');
+    if (ti) ti.classList.add('story-in');
+  }, 60);
 
   // Reveal al hacer scroll
   const io = new IntersectionObserver((entries) => {

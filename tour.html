@@ -12,10 +12,10 @@
   <meta name="theme-color" content="#00a39a" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="assets/logo-256.png" />
-  <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <script>try{var h=(new Date().getUTCHours()+18)%24;var a=(h>=18||h<6)?'dark':'light';var t=localStorage.getItem('theme')||a;document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
   <link rel="stylesheet" href="styles.css?v=6" />
   <link rel="stylesheet" href="tour.css?v=6" />
-  <link rel="stylesheet" href="enhance.css?v=7" />
+  <link rel="stylesheet" href="enhance.css?v=9" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a39a'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle'%3E🌴%3C/text%3E%3C/svg%3E" />
 </head>
 <body class="tour-page">
@@ -59,7 +59,7 @@
       <p class="thero__tagline" id="tTagline"></p>
       <div class="thero__chips" id="tChips"></div>
       <a id="tHeroCta" target="_blank" rel="noopener" class="btn btn--wa btn--lg">
-        <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="tour.cta">Reservar este tour por WhatsApp</span>
+        <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="tour.cta">Reservar transporte por WhatsApp</span>
       </a>
     </div>
     <div class="thero__scroll" aria-hidden="true">⌄</div>
@@ -74,7 +74,7 @@
         <p class="tdetail__note" id="tNote" hidden></p>
       </div>
       <aside class="tdetail__highlights">
-        <h2 class="thl__title" data-i18n="tour.highlights">Lo que incluye</h2>
+        <h2 class="thl__title" data-i18n="tour.highlights">Atractivos del destino</h2>
         <ul class="thl" id="tHighlights"></ul>
       </aside>
     </div>
@@ -108,7 +108,7 @@
       <h2 id="tCtaTitle"></h2>
       <p class="reservas__sub reservas__sub--center" data-i18n="tour.cta.sub">Escríbale a Samuel Ramírez Ampié por WhatsApp con su fecha, número de pasajeros y destino.</p>
       <a id="tBottomCta" target="_blank" rel="noopener" class="btn btn--wa btn--lg">
-        <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="tour.cta">Reservar este tour por WhatsApp</span>
+        <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="tour.cta">Reservar transporte por WhatsApp</span>
       </a>
       <p class="tcta__phone">+506 8801 5925</p>
     </div>
@@ -150,8 +150,8 @@
   <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
      target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">💬</a>
 
-  <script src="tours.js?v=6"></script>
-  <script src="tour.js?v=6"></script>
-  <script src="enhance.js?v=7"></script>
+  <script src="tours.js?v=9"></script>
+  <script src="tour.js?v=10"></script>
+  <script src="enhance.js?v=8"></script>
 </body>
 </html>

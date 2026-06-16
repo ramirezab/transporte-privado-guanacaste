@@ -7,8 +7,8 @@ window.TOURS = {
     region: { es: 'Guanacaste · Pacífico Norte', en: 'Guanacaste · North Pacific' },
     duration: { es: 'Medio día / día completo', en: 'Half / full day' },
     desc: {
-      es: 'La playa más famosa de Guanacaste: arena dorada, olas perfectas para aprender a surfear y los atardeceres más espectaculares del Pacífico. Lo llevamos desde su hotel y le mostramos los mejores rincones de Tamarindo y sus alrededores.',
-      en: 'Guanacaste’s most famous beach: golden sand, perfect waves to learn to surf, and the most spectacular sunsets on the Pacific. We pick you up at your hotel and show you the best spots in and around Tamarindo.'
+      es: 'La playa más famosa de Guanacaste: arena dorada, olas perfectas para aprender a surfear y los atardeceres más espectaculares del Pacífico. Lo llevamos cómodamente desde su hotel hasta Tamarindo y sus alrededores.',
+      en: 'Guanacaste’s most famous beach: golden sand, perfect waves to learn to surf, and the most spectacular sunsets on the Pacific. We pick you up at your hotel and drive you straight to Tamarindo and its surroundings.'
     },
     highlights: {
       es: ['Clases de surf para principiantes', 'Atardeceres de postal', 'Restaurantes y vida nocturna', 'Tour en bote por el estuario'],
@@ -69,8 +69,8 @@ window.TOURS = {
     region: { es: 'Alajuela · Zona Norte', en: 'Alajuela · Northern Zone' },
     duration: { es: 'Día completo', en: 'Full day' },
     desc: {
-      es: 'Un viaje al imponente Volcán Arenal: la espectacular Catarata de La Fortuna, aguas termales naturales y los paisajes verdes más impresionantes de Costa Rica. Una excursión de día completo desde Guanacaste que vale cada kilómetro.',
-      en: 'A trip to the towering Arenal Volcano: the spectacular La Fortuna Waterfall, natural hot springs, and the most impressive green landscapes in Costa Rica. A full-day excursion from Guanacaste that’s worth every kilometer.'
+      es: 'Un viaje al imponente Volcán Arenal: la espectacular Catarata de La Fortuna, aguas termales naturales y los paisajes verdes más impresionantes de Costa Rica. Un viaje de día completo desde Guanacaste que vale cada kilómetro.',
+      en: 'A trip to the towering Arenal Volcano: the spectacular La Fortuna Waterfall, natural hot springs, and the most impressive green landscapes in Costa Rica. A full-day trip from Guanacaste that’s worth every kilometer.'
     },
     highlights: {
       es: ['Vistas del Volcán Arenal', 'Catarata de La Fortuna', 'Aguas termales naturales', 'Lago Arenal'],

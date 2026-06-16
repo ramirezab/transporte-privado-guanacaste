@@ -58,8 +58,8 @@ const EN = {
   'serv.f1.p': 'Pickup and drop-off at Liberia International Airport (LIR / Daniel Oduber), with flight tracking.',
   'serv.f2.title': 'Hotel pickup',
   'serv.f2.p': 'We meet you right at the lobby of your hotel, villa, or Airbnb, whenever suits you best.',
-  'serv.f3.title': 'Tours & excursions',
-  'serv.f3.p': 'Beaches like Tamarindo and Conchal, plus La Fortuna, Río Celeste, and San José. We tailor the route to you.',
+  'serv.f3.title': 'We drive you across the country',
+  'serv.f3.p': 'To beaches like Tamarindo and Conchal, and also La Fortuna, Río Celeste, or San José. You pick the destination; we drive.',
   'serv.f4.title': 'Local driver',
   'serv.f4.p': 'Knowledge of the area, trustworthy recommendations, and a relaxed ride across the province.',
   'serv.f5.title': 'Guaranteed comfort',
@@ -84,12 +84,12 @@ const EN = {
   'fleet.note': 'Need a <strong>4x4</strong>? Ask about availability. Every booking is confirmed via WhatsApp.',
 
   'dest.kicker': 'Popular destinations',
-  'dest.title': 'The destinations you can visit with us',
-  'dest.sub': 'Beaches, volcanoes, and the capital — some of the most beautiful corners of Costa Rica.',
+  'dest.title': 'Destinations we drive you to',
+  'dest.sub': 'Tap a destination to see photos and request your ride. You choose where; we take you there.',
   'dest.cap.sunset': 'Pacific sunsets',
   'dest.cap.coast': 'Guanacaste coast',
   'dest.cap.fortuna': 'La Fortuna · Arenal Volcano',
-  'dest.go': 'See tour →',
+  'dest.go': 'See destination →',
   'dest.name.fortuna': 'La Fortuna · Arenal Volcano',
   'dest.name.leona': 'La Leona Waterfall',
 
@@ -110,10 +110,15 @@ const EN = {
   'filter.beach': 'Beaches',
   'filter.adventure': 'Adventure',
   'filter.city': 'City',
+  'filter.type': 'Type:',
+  'filter.duration': 'Duration:',
+  'filter.half': 'Half day',
+  'filter.full': 'Full day',
+  'qr.label': 'Scan me to ask for info on WhatsApp',
 
   'map.kicker': 'The route',
   'map.title': 'One country, many destinations',
-  'map.sub': 'We take you all across Costa Rica. Tap a point on the map to discover each tour.',
+  'map.sub': 'We take you all across Costa Rica. Tap a point on the map to see where we take you.',
 
   'faq.kicker': 'Frequently asked questions',
   'faq.title': 'Everything you need to know',
@@ -145,6 +150,7 @@ function setLanguage(lang) {
     b.classList.toggle('is-active', active);
     b.setAttribute('aria-pressed', String(active));
   });
+  buildQR(lang);
   try { localStorage.setItem('lang', lang); } catch (e) {}
 }
 
@@ -201,20 +207,42 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// ===== Filtros de destinos =====
+// ===== Filtros combinables (Tipo + Duración) =====
 const dfilters = document.getElementById('dfilters');
 if (dfilters) {
   const cards = [...document.querySelectorAll('.dcard')];
+  const sel = (group) => [...dfilters.querySelectorAll('[data-group="' + group + '"] .dfilter.is-active')].map((b) => b.dataset.filter);
+  const apply = () => {
+    const cat = sel('cat');
+    const dur = sel('dur');
+    cards.forEach((c) => {
+      const okCat = !cat.length || cat.includes(c.dataset.cat);
+      const okDur = !dur.length || dur.includes(c.dataset.dur);
+      c.classList.toggle('is-hidden', !(okCat && okDur));
+    });
+  };
   dfilters.addEventListener('click', (e) => {
     const btn = e.target.closest('.dfilter');
     if (!btn) return;
-    dfilters.querySelectorAll('.dfilter').forEach((b) => b.classList.toggle('is-active', b === btn));
-    const f = btn.getAttribute('data-filter');
-    cards.forEach((c) => {
-      const show = f === 'all' || c.getAttribute('data-cat') === f;
-      c.classList.toggle('is-hidden', !show);
-    });
+    btn.classList.toggle('is-active');
+    apply();
   });
+}
+
+// ===== QR de WhatsApp ("quiero info"), dependiente del idioma =====
+function buildQR(lang) {
+  const box = document.getElementById('qrCode');
+  if (!box || typeof qrcode === 'undefined') return;
+  const msg = lang === 'en'
+    ? 'Hi Samuel, I would like information about your private transport service in Guanacaste.'
+    : 'Hola Samuel, quiero información sobre el servicio de transporte privado en Guanacaste.';
+  const url = 'https://wa.me/50688015925?text=' + encodeURIComponent(msg);
+  try {
+    const qr = qrcode(0, 'M');
+    qr.addData(url);
+    qr.make();
+    box.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+  } catch (e) {}
 }
 
 // ===== FAQ acordeón =====

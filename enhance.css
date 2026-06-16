@@ -70,6 +70,33 @@ html[data-theme="dark"] .section__sub strong { color: var(--teal-light); }
 .dfilter:hover { color: var(--ocean); border-color: var(--aqua); }
 .dfilter.is-active { background: var(--teal); border-color: var(--teal); color: #fff; box-shadow: 0 8px 18px -8px rgba(0,109,119,.6); }
 .dcard.is-hidden { display: none; }
+.dfilters { gap: 12px 22px; }
+.dfilters__group { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.dfilters__label { font-family: var(--head); font-weight: 700; font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+
+/* ===== QR de WhatsApp ===== */
+.qr { margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.qr__code { width: 144px; height: 144px; background: #fff; border-radius: 14px; padding: 9px; box-shadow: 0 10px 26px -10px rgba(0,0,0,.45); }
+.qr__code svg { width: 100%; height: 100%; display: block; }
+.qr__label { font-size: .8rem; color: rgba(255,255,255,.82); text-align: center; max-width: 210px; }
+@media (max-width: 560px) { .qr { display: none; } }
+
+/* ===== Scroll-storytelling (tour) ===== */
+.thero__inner > * { opacity: 0; transform: translateY(26px);
+  transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+.thero__inner.story-in > * { opacity: 1; transform: none; }
+.thero__inner > *:nth-child(1) { transition-delay: .08s; }
+.thero__inner > *:nth-child(2) { transition-delay: .18s; }
+.thero__inner > *:nth-child(3) { transition-delay: .30s; }
+.thero__inner > *:nth-child(4) { transition-delay: .42s; }
+.thero__inner > *:nth-child(5) { transition-delay: .54s; }
+.thero__inner > *:nth-child(6) { transition-delay: .66s; }
+.tgallery__item:nth-child(2) { transition-delay: .07s; }
+.tgallery__item:nth-child(3) { transition-delay: .14s; }
+.tgallery__item:nth-child(4) { transition-delay: .21s; }
+@media (prefers-reduced-motion: reduce) {
+  .thero__inner > * { transition: none; opacity: 1; transform: none; }
+}
 
 /* ===== Mapa de ruta animado ===== */
 .routemap { background: linear-gradient(160deg, #04363b, var(--deep)); color: #fff; overflow: hidden; }

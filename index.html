@@ -17,14 +17,14 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="assets/logo-256.png" />
 
-  <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <script>try{var h=(new Date().getUTCHours()+18)%24;var a=(h>=18||h<6)?'dark':'light';var t=localStorage.getItem('theme')||a;document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css?v=6" />
   <link rel="stylesheet" href="tour.css?v=6" />
-  <link rel="stylesheet" href="enhance.css?v=7" />
+  <link rel="stylesheet" href="enhance.css?v=9" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a39a'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle'%3E🌴%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -71,8 +71,8 @@
       <h1 class="hero__title" data-i18n="hero.title">Transporte privado para descubrir el <span>Pacífico de Guanacaste</span></h1>
       <p class="hero__lead" data-i18n="hero.lead">
         Traslados cómodos y seguros desde el <strong>Aeropuerto Internacional de Liberia (LIR)</strong>,
-        recogida en su hotel y tours a las playas más hermosas. Viaje con un conductor local,
-        a su ritmo y sin complicaciones.
+        recogida en su hotel y viajes a las playas y destinos más hermosos.
+        Usted elige a dónde ir; nosotros lo llevamos con un conductor local, a su ritmo y sin complicaciones.
       </p>
       <div class="hero__actions">
         <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
@@ -111,8 +111,8 @@
         </div>
         <div class="feature">
           <div class="feature__icon">🏖️</div>
-          <h3 data-i18n="serv.f3.title">Tours y excursiones</h3>
-          <p data-i18n="serv.f3.p">Playas como Tamarindo y Conchal, además de La Fortuna, Río Celeste y San José. Diseñamos la ruta a su medida.</p>
+          <h3 data-i18n="serv.f3.title">Lo llevamos a todo el país</h3>
+          <p data-i18n="serv.f3.p">A playas como Tamarindo y Conchal, y también a La Fortuna, Río Celeste o San José. Usted elige el destino; nosotros conducimos.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">🧭</div>
@@ -191,63 +191,70 @@
     <div class="container">
       <div class="section__head section__head--center">
         <span class="kicker" data-i18n="dest.kicker">Destinos populares</span>
-        <h2 data-i18n="dest.title">Los destinos que puede conocer con nosotros</h2>
-        <p class="section__sub" data-i18n="dest.sub">Toca un destino para ver su galería de fotos y reservar el tour. Playas, volcanes y la capital.</p>
+        <h2 data-i18n="dest.title">Destinos a los que lo llevamos</h2>
+        <p class="section__sub" data-i18n="dest.sub">Toca un destino para ver fotos y pedir tu traslado. Tú decides a dónde; nosotros te llevamos.</p>
       </div>
       <div class="dfilters" id="dfilters">
-        <button class="dfilter is-active" data-filter="all" data-i18n="filter.all">Todos</button>
-        <button class="dfilter" data-filter="playa" data-i18n="filter.beach">Playas</button>
-        <button class="dfilter" data-filter="aventura" data-i18n="filter.adventure">Aventura</button>
-        <button class="dfilter" data-filter="ciudad" data-i18n="filter.city">Ciudad</button>
+        <div class="dfilters__group" data-group="cat">
+          <span class="dfilters__label" data-i18n="filter.type">Tipo:</span>
+          <button class="dfilter" data-filter="playa" data-i18n="filter.beach">Playas</button>
+          <button class="dfilter" data-filter="aventura" data-i18n="filter.adventure">Aventura</button>
+          <button class="dfilter" data-filter="ciudad" data-i18n="filter.city">Ciudad</button>
+        </div>
+        <div class="dfilters__group" data-group="dur">
+          <span class="dfilters__label" data-i18n="filter.duration">Duración:</span>
+          <button class="dfilter" data-filter="medio" data-i18n="filter.half">Medio día</button>
+          <button class="dfilter" data-filter="dia" data-i18n="filter.full">Día completo</button>
+        </div>
       </div>
       <div class="destinos-grid">
-        <a class="dcard" data-cat="playa" href="tour.html?t=tamarindo">
+        <a class="dcard" data-cat="playa" data-dur="medio" href="tour.html?t=tamarindo">
           <img src="assets/tamarindo-aerial.jpg" alt="Tamarindo, Guanacaste" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">Tamarindo</span>
-            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver destino →</span>
           </div>
         </a>
-        <a class="dcard" data-cat="playa" href="tour.html?t=playa-hermosa">
+        <a class="dcard" data-cat="playa" data-dur="medio" href="tour.html?t=playa-hermosa">
           <img src="assets/hermosa-sunset.jpg" alt="Playa Hermosa, Guanacaste" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">Playa Hermosa</span>
-            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver destino →</span>
           </div>
         </a>
-        <a class="dcard" data-cat="playa" href="tour.html?t=playa-conchal">
+        <a class="dcard" data-cat="playa" data-dur="medio" href="tour.html?t=playa-conchal">
           <img src="assets/conchal-beach.jpg" alt="Playa Conchal, Guanacaste" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">Playa Conchal</span>
-            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver destino →</span>
           </div>
         </a>
-        <a class="dcard" data-cat="aventura" href="tour.html?t=la-fortuna">
+        <a class="dcard" data-cat="aventura" data-dur="dia" href="tour.html?t=la-fortuna">
           <img src="assets/fortuna.jpg" alt="La Fortuna y el Volcán Arenal" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name" data-i18n="dest.name.fortuna">La Fortuna · Volcán Arenal</span>
-            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver destino →</span>
           </div>
         </a>
-        <a class="dcard" data-cat="aventura" href="tour.html?t=rio-celeste">
+        <a class="dcard" data-cat="aventura" data-dur="dia" href="tour.html?t=rio-celeste">
           <img src="assets/rio-celeste.jpg" alt="Río Celeste, Costa Rica" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">Río Celeste</span>
-            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver destino →</span>
           </div>
         </a>
-        <a class="dcard" data-cat="ciudad" href="tour.html?t=san-jose">
+        <a class="dcard" data-cat="ciudad" data-dur="dia" href="tour.html?t=san-jose">
           <img src="assets/san-jose.jpg" alt="San José, Costa Rica" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">San José</span>
-            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver destino →</span>
           </div>
         </a>
-        <a class="dcard" data-cat="aventura" href="tour.html?t=catarata-la-leona">
+        <a class="dcard" data-cat="aventura" data-dur="dia" href="tour.html?t=catarata-la-leona">
           <img src="assets/la-leona.jpg" alt="Catarata La Leona" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name" data-i18n="dest.name.leona">Catarata La Leona</span>
-            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver destino →</span>
           </div>
         </a>
       </div>
@@ -260,7 +267,7 @@
       <div class="section__head section__head--center">
         <span class="kicker kicker--light" data-i18n="map.kicker">El recorrido</span>
         <h2 data-i18n="map.title">Un país, muchos destinos</h2>
-        <p class="routemap__sub" data-i18n="map.sub">Lo llevamos por toda Costa Rica. Toca un punto del mapa para descubrir cada tour.</p>
+        <p class="routemap__sub" data-i18n="map.sub">Lo llevamos por toda Costa Rica. Toca un punto del mapa para ver a dónde lo llevamos.</p>
       </div>
       <div class="routemap__wrap">
         <svg viewBox="0 0 1000 420" role="img" aria-label="Mapa de ruta de los destinos">
@@ -351,6 +358,10 @@
             <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="res.cta">Escribir por WhatsApp</span>
           </a>
           <p class="reservas__hint" data-i18n="res.hint">Toca el botón para abrir WhatsApp con un mensaje listo para enviar.</p>
+          <div class="qr" id="qrBox">
+            <div class="qr__code" id="qrCode" role="img" aria-label="Código QR de WhatsApp"></div>
+            <span class="qr__label" data-i18n="qr.label">Escanéame para pedir info por WhatsApp</span>
+          </div>
         </div>
       </div>
     </div>
@@ -380,7 +391,8 @@
   <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
      target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">💬</a>
 
-  <script src="script.js?v=6"></script>
-  <script src="enhance.js?v=7"></script>
+  <script src="qrcode.min.js"></script>
+  <script src="script.js?v=9"></script>
+  <script src="enhance.js?v=8"></script>
 </body>
 </html>
