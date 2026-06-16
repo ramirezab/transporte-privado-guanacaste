@@ -16,7 +16,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="tour.css?v=5" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a39a'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle'%3E🌴%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -184,41 +185,58 @@
       <div class="section__head section__head--center">
         <span class="kicker" data-i18n="dest.kicker">Destinos populares</span>
         <h2 data-i18n="dest.title">Los destinos que puede conocer con nosotros</h2>
-        <p class="section__sub" data-i18n="dest.sub">Playas, volcanes y la capital: algunos de los rincones más bellos de Costa Rica.</p>
+        <p class="section__sub" data-i18n="dest.sub">Toca un destino para ver su galería de fotos y reservar el tour. Playas, volcanes y la capital.</p>
       </div>
-      <div class="gallery">
-        <figure class="gallery__item">
-          <img src="assets/tamarindo-aerial.jpg" alt="Vista aérea de la bahía turquesa de Tamarindo, Guanacaste" loading="lazy" />
-          <figcaption>Tamarindo</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/hermosa-sunset.jpg" alt="Atardecer dorado en Playa Hermosa, Guanacaste" loading="lazy" />
-          <figcaption>Playa Hermosa</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/conchal-beach.jpg" alt="Playa Conchal con arena de conchas y mar azul" loading="lazy" />
-          <figcaption>Playa Conchal</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/tamarindo-wide.jpg" alt="Caballos al atardecer en la playa de Tamarindo" loading="lazy" />
-          <figcaption data-i18n="dest.cap.sunset">Atardeceres del Pacífico</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/fortuna.jpg" alt="Volcán Arenal en La Fortuna, Costa Rica" loading="lazy" />
-          <figcaption data-i18n="dest.cap.fortuna">La Fortuna · Volcán Arenal</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/rio-celeste.jpg" alt="Cascada de aguas turquesas de Río Celeste, Costa Rica" loading="lazy" />
-          <figcaption>Río Celeste</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/san-jose.jpg" alt="Teatro Nacional en San José, Costa Rica" loading="lazy" />
-          <figcaption>San José</figcaption>
-        </figure>
-        <figure class="gallery__item">
-          <img src="assets/hero-tamarindo.jpg" alt="Playa de arena dorada y palmeras en Guanacaste" loading="lazy" />
-          <figcaption data-i18n="dest.cap.coast">Costa de Guanacaste</figcaption>
-        </figure>
+      <div class="destinos-grid">
+        <a class="dcard" href="tour.html?t=tamarindo">
+          <img src="assets/tamarindo-aerial.jpg" alt="Tamarindo, Guanacaste" loading="lazy" />
+          <div class="dcard__overlay">
+            <span class="dcard__name">Tamarindo</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+          </div>
+        </a>
+        <a class="dcard" href="tour.html?t=playa-hermosa">
+          <img src="assets/hermosa-sunset.jpg" alt="Playa Hermosa, Guanacaste" loading="lazy" />
+          <div class="dcard__overlay">
+            <span class="dcard__name">Playa Hermosa</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+          </div>
+        </a>
+        <a class="dcard" href="tour.html?t=playa-conchal">
+          <img src="assets/conchal-beach.jpg" alt="Playa Conchal, Guanacaste" loading="lazy" />
+          <div class="dcard__overlay">
+            <span class="dcard__name">Playa Conchal</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+          </div>
+        </a>
+        <a class="dcard" href="tour.html?t=la-fortuna">
+          <img src="assets/fortuna.jpg" alt="La Fortuna y el Volcán Arenal" loading="lazy" />
+          <div class="dcard__overlay">
+            <span class="dcard__name" data-i18n="dest.name.fortuna">La Fortuna · Volcán Arenal</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+          </div>
+        </a>
+        <a class="dcard" href="tour.html?t=rio-celeste">
+          <img src="assets/rio-celeste.jpg" alt="Río Celeste, Costa Rica" loading="lazy" />
+          <div class="dcard__overlay">
+            <span class="dcard__name">Río Celeste</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+          </div>
+        </a>
+        <a class="dcard" href="tour.html?t=san-jose">
+          <img src="assets/san-jose.jpg" alt="San José, Costa Rica" loading="lazy" />
+          <div class="dcard__overlay">
+            <span class="dcard__name">San José</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+          </div>
+        </a>
+        <a class="dcard" href="tour.html?t=catarata-la-leona">
+          <img src="assets/la-leona.jpg" alt="Catarata La Leona" loading="lazy" />
+          <div class="dcard__overlay">
+            <span class="dcard__name" data-i18n="dest.name.leona">Catarata La Leona</span>
+            <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -283,6 +301,6 @@
   <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
      target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">💬</a>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour · Transporte Privado Guanacaste</title>
+  <meta name="description" content="Detalle del tour con galería de fotos. Transporte privado en Guanacaste, Costa Rica. Reservas por WhatsApp." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="tour.css?v=5" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a39a'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle'%3E🌴%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="tour-page">
+
+  <!-- ===== NAV ===== -->
+  <header class="nav nav--solid" id="top">
+    <div class="container nav__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__mark">🌴</span>
+        <span class="brand__text">
+          <strong>Guanacaste</strong>
+          <em data-i18n="brand.sub">Transporte Privado</em>
+        </span>
+      </a>
+      <nav class="nav__links" aria-label="Navegación principal">
+        <a href="index.html#servicios" data-i18n="nav.services">Servicios</a>
+        <a href="index.html#flota" data-i18n="nav.vehicles">Vehículos</a>
+        <a href="index.html#destinos" data-i18n="nav.destinations">Destinos</a>
+        <a href="index.html#reservas" class="nav__cta" data-i18n="nav.book">Reservar</a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="es" class="is-active" aria-pressed="true">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO del tour (dinámico) ===== -->
+  <section class="thero" id="thero">
+    <div class="thero__bg" id="theroBg"></div>
+    <div class="thero__overlay"></div>
+    <div class="container thero__inner">
+      <a href="index.html#destinos" class="thero__back" data-i18n="tour.back">← Volver a destinos</a>
+      <p class="thero__region" id="tRegion"></p>
+      <h1 class="thero__title" id="tTitle"></h1>
+      <p class="thero__tagline" id="tTagline"></p>
+      <div class="thero__chips" id="tChips"></div>
+      <a id="tHeroCta" target="_blank" rel="noopener" class="btn btn--wa btn--lg">
+        <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="tour.cta">Reservar este tour por WhatsApp</span>
+      </a>
+    </div>
+    <div class="thero__scroll" aria-hidden="true">⌄</div>
+  </section>
+
+  <!-- ===== Detalle + highlights ===== -->
+  <section class="section tdetail">
+    <div class="container tdetail__grid">
+      <div class="tdetail__about">
+        <span class="kicker" data-i18n="tour.about">Sobre el destino</span>
+        <p class="tdetail__desc" id="tDesc"></p>
+        <p class="tdetail__note" id="tNote" hidden></p>
+      </div>
+      <aside class="tdetail__highlights">
+        <h2 class="thl__title" data-i18n="tour.highlights">Lo que incluye</h2>
+        <ul class="thl" id="tHighlights"></ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== Galería ===== -->
+  <section class="section section--alt tgal">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker" data-i18n="tour.gallery.kicker">Galería</span>
+        <h2 id="tGalTitle"></h2>
+      </div>
+      <div class="tgallery" id="tGallery"></div>
+    </div>
+  </section>
+
+  <!-- ===== Otros destinos ===== -->
+  <section class="section tothers">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker" data-i18n="tour.others">Otros destinos</span>
+        <h2 data-i18n="tour.others.title">Sigue explorando Costa Rica</h2>
+      </div>
+      <div class="tothers__grid" id="tOthers"></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA band ===== -->
+  <section class="section section--reservas tcta">
+    <div class="container tcta__inner">
+      <h2 id="tCtaTitle"></h2>
+      <p class="reservas__sub reservas__sub--center" data-i18n="tour.cta.sub">Escríbale a Samuel Ramírez Ampié por WhatsApp con su fecha, número de pasajeros y destino.</p>
+      <a id="tBottomCta" target="_blank" rel="noopener" class="btn btn--wa btn--lg">
+        <span class="wa-icon" aria-hidden="true">💬</span> <span data-i18n="tour.cta">Reservar este tour por WhatsApp</span>
+      </a>
+      <p class="tcta__phone">+506 8801 5925</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark">🌴</span>
+        <div>
+          <strong>Guanacaste · Transporte Privado</strong>
+          <em data-i18n="footer.sub">Traslados y tours en el Pacífico de Costa Rica</em>
+        </div>
+      </div>
+      <a href="https://wa.me/50688015925" target="_blank" rel="noopener" class="footer__wa">💬 WhatsApp: +506 8801 5925</a>
+      <p class="footer__copy">© <span id="year"></span> <span data-i18n="footer.copy">Transporte Privado Guanacaste · Costa Rica.</span></p>
+    </div>
+  </footer>
+
+  <!-- ===== Lightbox ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox__close" id="lbClose" aria-label="Cerrar">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Anterior">‹</button>
+    <figure class="lightbox__stage">
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Siguiente">›</button>
+    <div class="lightbox__counter" id="lbCounter"></div>
+  </div>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
+     target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">💬</a>
+
+  <script src="tours.js?v=5"></script>
+  <script src="tour.js?v=5"></script>
+</body>
+</html>

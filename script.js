@@ -89,6 +89,9 @@ const EN = {
   'dest.cap.sunset': 'Pacific sunsets',
   'dest.cap.coast': 'Guanacaste coast',
   'dest.cap.fortuna': 'La Fortuna · Arenal Volcano',
+  'dest.go': 'See tour →',
+  'dest.name.fortuna': 'La Fortuna · Arenal Volcano',
+  'dest.name.leona': 'La Leona Waterfall',
 
   'pano.text': '"Pura vida" on every kilometer',
 
