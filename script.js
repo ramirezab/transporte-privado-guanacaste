@@ -58,8 +58,8 @@ const EN = {
   'serv.f1.p': 'Pickup and drop-off at Liberia International Airport (LIR / Daniel Oduber), with flight tracking.',
   'serv.f2.title': 'Hotel pickup',
   'serv.f2.p': 'We meet you right at the lobby of your hotel, villa, or Airbnb, whenever suits you best.',
-  'serv.f3.title': 'Beach tours',
-  'serv.f3.p': 'Tamarindo, Conchal, Playas del Coco, Flamingo, Sámara, and more. We tailor the route to you.',
+  'serv.f3.title': 'Tours & excursions',
+  'serv.f3.p': 'Beaches like Tamarindo and Conchal, plus La Fortuna, Río Celeste, and San José. We tailor the route to you.',
   'serv.f4.title': 'Local driver',
   'serv.f4.p': 'Knowledge of the area, trustworthy recommendations, and a relaxed ride across the province.',
   'serv.f5.title': 'Guaranteed comfort',
@@ -84,10 +84,11 @@ const EN = {
   'fleet.note': 'Need a <strong>4x4</strong>? Ask about availability. Every booking is confirmed via WhatsApp.',
 
   'dest.kicker': 'Popular destinations',
-  'dest.title': 'The beaches you can visit with us',
-  'dest.sub': 'Some of the most beautiful corners of Costa Rica’s North Pacific.',
+  'dest.title': 'The destinations you can visit with us',
+  'dest.sub': 'Beaches, volcanoes, and the capital — some of the most beautiful corners of Costa Rica.',
   'dest.cap.sunset': 'Pacific sunsets',
   'dest.cap.coast': 'Guanacaste coast',
+  'dest.cap.fortuna': 'La Fortuna · Arenal Volcano',
 
   'pano.text': '"Pura vida" on every kilometer',
 
@@ -99,7 +100,7 @@ const EN = {
   'res.hint': 'Tap the button to open WhatsApp with a message ready to send.',
 
   'footer.sub': 'Transfers and tours on Costa Rica’s Pacific coast',
-  'footer.credits': 'Beach photos: Wikimedia Commons (CC BY / CC BY-SA) — Jarle Naustvik, Tamarindowiki, Guacamolio, Rômulo Gama Ferreira, El Pantera, WClarke. Vehicle illustrations made in-house. Aerial video: Todd Swint (YouTube).',
+  'footer.credits': 'Photos: Wikimedia Commons (CC0 / CC BY / CC BY-SA) — Jarle Naustvik, Tamarindowiki, Guacamolio, Rômulo Gama Ferreira, El Pantera, WClarke, Bernard Gagnon, David Broad, and others. Vehicle illustrations made in-house. Aerial video: Todd Swint (YouTube).',
   'footer.copy': 'Guanacaste Private Transport · Costa Rica.',
 };
 
