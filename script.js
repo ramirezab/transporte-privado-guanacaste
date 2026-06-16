@@ -105,6 +105,26 @@ const EN = {
   'footer.sub': 'Transfers and tours on Costa Rica’s Pacific coast',
   'footer.credits': 'Photos: Wikimedia Commons (CC0 / CC BY / CC BY-SA) — Jarle Naustvik, Tamarindowiki, Guacamolio, Rômulo Gama Ferreira, El Pantera, WClarke, Bernard Gagnon, David Broad, and others. Vehicle illustrations made in-house. Aerial video: Todd Swint (YouTube).',
   'footer.copy': 'Guanacaste Private Transport · Costa Rica.',
+
+  'filter.all': 'All',
+  'filter.beach': 'Beaches',
+  'filter.adventure': 'Adventure',
+  'filter.city': 'City',
+
+  'map.kicker': 'The route',
+  'map.title': 'One country, many destinations',
+  'map.sub': 'We take you all across Costa Rica. Tap a point on the map to discover each tour.',
+
+  'faq.kicker': 'Frequently asked questions',
+  'faq.title': 'Everything you need to know',
+  'faq.q1': 'How do I make a booking?',
+  'faq.a1': 'It’s simple: message Samuel Ramírez Ampié on WhatsApp with your date, number of passengers, and destination. He’ll confirm availability and all the details.',
+  'faq.q2': 'How many people fit per vehicle?',
+  'faq.a2': 'Each vehicle travels with up to 4 passengers plus the driver. For larger groups we can arrange several vehicles.',
+  'faq.q3': 'Do you do transfers from Liberia Airport (LIR)?',
+  'faq.a3': 'Yes. We do pickups and drop-offs at Liberia International Airport (Daniel Oduber) and also at your hotel, villa, or Airbnb.',
+  'faq.q4': 'Do you have 4x4 vehicles?',
+  'faq.a4': 'For routes that require a 4x4, ask about availability when booking and we’ll let you know the options.',
 };
 
 // Guardar el contenido español original (del HTML)
@@ -180,3 +200,51 @@ const onScroll = () => {
 };
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
+
+// ===== Filtros de destinos =====
+const dfilters = document.getElementById('dfilters');
+if (dfilters) {
+  const cards = [...document.querySelectorAll('.dcard')];
+  dfilters.addEventListener('click', (e) => {
+    const btn = e.target.closest('.dfilter');
+    if (!btn) return;
+    dfilters.querySelectorAll('.dfilter').forEach((b) => b.classList.toggle('is-active', b === btn));
+    const f = btn.getAttribute('data-filter');
+    cards.forEach((c) => {
+      const show = f === 'all' || c.getAttribute('data-cat') === f;
+      c.classList.toggle('is-hidden', !show);
+    });
+  });
+}
+
+// ===== FAQ acordeón =====
+document.querySelectorAll('.faq__item').forEach((item) => {
+  const q = item.querySelector('.faq__q');
+  const a = item.querySelector('.faq__a');
+  q.addEventListener('click', () => {
+    const open = item.classList.toggle('is-open');
+    a.style.maxHeight = open ? a.scrollHeight + 'px' : '0';
+  });
+});
+
+// ===== Contadores animados =====
+const counters = document.querySelectorAll('[data-count]');
+if (counters.length) {
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      let n = 0;
+      const steps = 22;
+      const tick = () => {
+        n += Math.ceil(target / steps);
+        if (n >= target) { el.textContent = target; }
+        else { el.textContent = n; requestAnimationFrame(tick); }
+      };
+      tick();
+      cio.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach((c) => cio.observe(c));
+}

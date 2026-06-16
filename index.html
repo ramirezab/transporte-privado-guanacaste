@@ -13,11 +13,16 @@
   <meta property="og:locale" content="es_CR" />
   <meta property="og:locale:alternate" content="en_US" />
 
+  <meta name="theme-color" content="#00a39a" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/logo-256.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=5" />
-  <link rel="stylesheet" href="tour.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="tour.css?v=6" />
+  <link rel="stylesheet" href="enhance.css?v=6" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a39a'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle'%3E🌴%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -75,7 +80,7 @@
         <a href="#flota" class="btn btn--ghost" data-i18n="hero.cta2">Ver vehículos</a>
       </div>
       <ul class="hero__stats">
-        <li><strong>3</strong><span data-i18n="hero.stat1">Vehículos disponibles</span></li>
+        <li><strong data-count="3">3</strong><span data-i18n="hero.stat1">Vehículos disponibles</span></li>
         <li><strong>4 + 1</strong><span data-i18n="hero.stat2">Pasajeros + chófer por viaje</span></li>
         <li><strong>24/7</strong><span data-i18n="hero.stat3">Reservas por WhatsApp</span></li>
       </ul>
@@ -187,50 +192,56 @@
         <h2 data-i18n="dest.title">Los destinos que puede conocer con nosotros</h2>
         <p class="section__sub" data-i18n="dest.sub">Toca un destino para ver su galería de fotos y reservar el tour. Playas, volcanes y la capital.</p>
       </div>
+      <div class="dfilters" id="dfilters">
+        <button class="dfilter is-active" data-filter="all" data-i18n="filter.all">Todos</button>
+        <button class="dfilter" data-filter="playa" data-i18n="filter.beach">Playas</button>
+        <button class="dfilter" data-filter="aventura" data-i18n="filter.adventure">Aventura</button>
+        <button class="dfilter" data-filter="ciudad" data-i18n="filter.city">Ciudad</button>
+      </div>
       <div class="destinos-grid">
-        <a class="dcard" href="tour.html?t=tamarindo">
+        <a class="dcard" data-cat="playa" href="tour.html?t=tamarindo">
           <img src="assets/tamarindo-aerial.jpg" alt="Tamarindo, Guanacaste" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">Tamarindo</span>
             <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
           </div>
         </a>
-        <a class="dcard" href="tour.html?t=playa-hermosa">
+        <a class="dcard" data-cat="playa" href="tour.html?t=playa-hermosa">
           <img src="assets/hermosa-sunset.jpg" alt="Playa Hermosa, Guanacaste" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">Playa Hermosa</span>
             <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
           </div>
         </a>
-        <a class="dcard" href="tour.html?t=playa-conchal">
+        <a class="dcard" data-cat="playa" href="tour.html?t=playa-conchal">
           <img src="assets/conchal-beach.jpg" alt="Playa Conchal, Guanacaste" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">Playa Conchal</span>
             <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
           </div>
         </a>
-        <a class="dcard" href="tour.html?t=la-fortuna">
+        <a class="dcard" data-cat="aventura" href="tour.html?t=la-fortuna">
           <img src="assets/fortuna.jpg" alt="La Fortuna y el Volcán Arenal" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name" data-i18n="dest.name.fortuna">La Fortuna · Volcán Arenal</span>
             <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
           </div>
         </a>
-        <a class="dcard" href="tour.html?t=rio-celeste">
+        <a class="dcard" data-cat="aventura" href="tour.html?t=rio-celeste">
           <img src="assets/rio-celeste.jpg" alt="Río Celeste, Costa Rica" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">Río Celeste</span>
             <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
           </div>
         </a>
-        <a class="dcard" href="tour.html?t=san-jose">
+        <a class="dcard" data-cat="ciudad" href="tour.html?t=san-jose">
           <img src="assets/san-jose.jpg" alt="San José, Costa Rica" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name">San José</span>
             <span class="dcard__go" data-i18n="dest.go">Ver tour →</span>
           </div>
         </a>
-        <a class="dcard" href="tour.html?t=catarata-la-leona">
+        <a class="dcard" data-cat="aventura" href="tour.html?t=catarata-la-leona">
           <img src="assets/la-leona.jpg" alt="Catarata La Leona" loading="lazy" />
           <div class="dcard__overlay">
             <span class="dcard__name" data-i18n="dest.name.leona">Catarata La Leona</span>
@@ -241,10 +252,76 @@
     </div>
   </section>
 
+  <!-- ===== MAPA DE RUTA animado ===== -->
+  <section class="section routemap" id="ruta">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker kicker--light" data-i18n="map.kicker">El recorrido</span>
+        <h2 data-i18n="map.title">Un país, muchos destinos</h2>
+        <p class="routemap__sub" data-i18n="map.sub">Lo llevamos por toda Costa Rica. Toca un punto del mapa para descubrir cada tour.</p>
+      </div>
+      <div class="routemap__wrap">
+        <svg viewBox="0 0 1000 420" role="img" aria-label="Mapa de ruta de los destinos">
+          <defs>
+            <linearGradient id="routeGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#2ec4b6" />
+              <stop offset="0.6" stop-color="#83c5be" />
+              <stop offset="1" stop-color="#ff9f1c" />
+            </linearGradient>
+          </defs>
+          <path class="route-path-bg" d="M80,300 Q145,250 210,200 Q275,250 340,300 Q420,235 500,170 Q570,225 640,280 Q710,220 780,160 Q850,230 920,300" />
+          <path id="routeLine" class="route-path" d="M80,300 Q145,250 210,200 Q275,250 340,300 Q420,235 500,170 Q570,225 640,280 Q710,220 780,160 Q850,230 920,300" />
+
+          <a class="route-node" href="tour.html?t=tamarindo"><circle class="halo" cx="80" cy="300" r="10"/><circle class="dot" cx="80" cy="300" r="9"/><text x="80" y="334">Tamarindo</text></a>
+          <a class="route-node" href="tour.html?t=playa-hermosa"><circle class="halo" cx="210" cy="200" r="10"/><circle class="dot" cx="210" cy="200" r="9"/><text x="210" y="184">P. Hermosa</text></a>
+          <a class="route-node" href="tour.html?t=playa-conchal"><circle class="halo" cx="340" cy="300" r="10"/><circle class="dot" cx="340" cy="300" r="9"/><text x="340" y="334">P. Conchal</text></a>
+          <a class="route-node" href="tour.html?t=la-fortuna"><circle class="halo" cx="500" cy="170" r="10"/><circle class="dot" cx="500" cy="170" r="9"/><text x="500" y="154">La Fortuna</text></a>
+          <a class="route-node" href="tour.html?t=rio-celeste"><circle class="halo" cx="640" cy="280" r="10"/><circle class="dot" cx="640" cy="280" r="9"/><text x="640" y="314">Río Celeste</text></a>
+          <a class="route-node" href="tour.html?t=catarata-la-leona"><circle class="halo" cx="780" cy="160" r="10"/><circle class="dot" cx="780" cy="160" r="9"/><text x="780" y="144">La Leona</text></a>
+          <a class="route-node" href="tour.html?t=san-jose"><circle class="halo" cx="920" cy="300" r="10"/><circle class="dot" cx="920" cy="300" r="9"/><text x="920" y="334">San José</text></a>
+
+          <text class="route-van" text-anchor="middle" dy="11">🚐
+            <animateMotion dur="18s" repeatCount="indefinite" rotate="0" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+              <mpath href="#routeLine" xlink:href="#routeLine" />
+            </animateMotion>
+          </text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== PANORAMA divider ===== -->
   <section class="pano" aria-hidden="true">
     <div class="pano__img"></div>
     <div class="pano__text" data-i18n="pano.text">"Pura vida" en cada kilómetro</div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker" data-i18n="faq.kicker">Preguntas frecuentes</span>
+        <h2 data-i18n="faq.title">Todo lo que necesita saber</h2>
+      </div>
+      <div class="faq" id="faqList">
+        <div class="faq__item">
+          <button class="faq__q" data-i18n="faq.q1">¿Cómo hago una reserva?</button>
+          <div class="faq__a"><p data-i18n="faq.a1">Es muy sencillo: escríbale a Samuel Ramírez Ampié por WhatsApp con su fecha, número de pasajeros y destino. Le confirmará disponibilidad y todos los detalles.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" data-i18n="faq.q2">¿Cuántas personas caben por vehículo?</button>
+          <div class="faq__a"><p data-i18n="faq.a2">Cada vehículo viaja con hasta 4 pasajeros más el chófer. Para grupos más grandes podemos coordinar varios vehículos.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" data-i18n="faq.q3">¿Hacen traslados desde el Aeropuerto de Liberia (LIR)?</button>
+          <div class="faq__a"><p data-i18n="faq.a3">Sí. Realizamos recogidas y entregas en el Aeropuerto Internacional de Liberia (Daniel Oduber) y también en su hotel, villa o Airbnb.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" data-i18n="faq.q4">¿Tienen vehículos 4x4?</button>
+          <div class="faq__a"><p data-i18n="faq.a4">Para rutas que requieren 4x4, pregunte por disponibilidad al momento de reservar y le indicaremos las opciones.</p></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ===== RESERVAS / CONTACTO ===== -->
@@ -301,6 +378,7 @@
   <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
      target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">💬</a>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
+  <script src="enhance.js?v=6"></script>
 </body>
 </html>

@@ -9,8 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=5" />
-  <link rel="stylesheet" href="tour.css?v=5" />
+  <meta name="theme-color" content="#00a39a" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/logo-256.png" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="tour.css?v=6" />
+  <link rel="stylesheet" href="enhance.css?v=6" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a39a'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle'%3E🌴%3C/text%3E%3C/svg%3E" />
 </head>
 <body class="tour-page">
@@ -126,6 +130,10 @@
 
   <!-- ===== Lightbox ===== -->
   <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox__tools">
+      <button class="lightbox__tool" id="lbZoom" aria-label="Zoom" title="Zoom">⤢</button>
+      <button class="lightbox__tool" id="lbPlay" aria-label="Slideshow" title="Slideshow">▶</button>
+    </div>
     <button class="lightbox__close" id="lbClose" aria-label="Cerrar">✕</button>
     <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Anterior">‹</button>
     <figure class="lightbox__stage">
@@ -133,6 +141,7 @@
       <figcaption id="lbCap"></figcaption>
     </figure>
     <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Siguiente">›</button>
+    <div class="lightbox__thumbs" id="lbThumbs"></div>
     <div class="lightbox__counter" id="lbCounter"></div>
   </div>
 
@@ -140,7 +149,8 @@
   <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
      target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">💬</a>
 
-  <script src="tours.js?v=5"></script>
-  <script src="tour.js?v=5"></script>
+  <script src="tours.js?v=6"></script>
+  <script src="tour.js?v=6"></script>
+  <script src="enhance.js?v=6"></script>
 </body>
 </html>
