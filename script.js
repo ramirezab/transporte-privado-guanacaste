@@ -1,3 +1,39 @@
+// ===== Video de fondo (YouTube IFrame API) =====
+// Siempre inicia y vuelve al segundo 8, silenciado y en bucle.
+(function () {
+  var VIDEO_ID = 'XnCxlO4mfjQ';
+  var START = 8;
+  if (!document.getElementById('heroPlayer')) return;
+
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  window.onYouTubeIframeAPIReady = function () {
+    window._heroPlayer = new YT.Player('heroPlayer', {
+      videoId: VIDEO_ID,
+      playerVars: {
+        autoplay: 1, mute: 1, controls: 0, playsinline: 1, rel: 0,
+        modestbranding: 1, disablekb: 1, fs: 0, iv_load_policy: 3, start: START
+      },
+      events: {
+        onReady: function (e) {
+          e.target.mute();
+          e.target.seekTo(START, true);
+          e.target.playVideo();
+        },
+        onStateChange: function (e) {
+          // Al terminar, reinicia desde el segundo 8 (bucle limpio)
+          if (e.data === YT.PlayerState.ENDED) {
+            e.target.seekTo(START, true);
+            e.target.playVideo();
+          }
+        }
+      }
+    });
+  };
+})();
+
 // Año dinámico
 document.getElementById('year').textContent = new Date().getFullYear();
 

@@ -24,9 +24,10 @@ assets/           Imágenes de playas (Wikimedia Commons, CC BY / CC BY-SA)
 ```
 
 ## Créditos de imágenes
-Fotografías de Wikimedia Commons bajo licencias Creative Commons (CC BY / CC BY-SA):
+Fotografías de playas: Wikimedia Commons bajo licencias Creative Commons (CC BY / CC BY-SA):
 Jarle Naustvik, Tamarindowiki, Guacamolio, Rômulo Gama Ferreira, El Pantera, WClarke.
-Video aéreo: SkyView · Swann Junction (YouTube).
+Ilustraciones de los vehículos generadas con figuras geométricas (PIL/Pillow) — ver
+`assets/make_cars.py`. Video aéreo de fondo: Todd Swint (YouTube), reproducido desde el segundo 8.
 
 ## Desarrollo local
 ```bash

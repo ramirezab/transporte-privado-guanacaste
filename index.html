@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=1" />
+  <link rel="stylesheet" href="styles.css?v=2" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2300a39a'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle'%3E🌴%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -46,13 +46,7 @@
   <section class="hero">
     <div class="hero__media" aria-hidden="true">
       <div class="hero__video-wrap">
-        <iframe
-          class="hero__video"
-          src="https://www.youtube.com/embed/WeE_L1ZbuFI?autoplay=1&mute=1&controls=0&loop=1&playlist=WeE_L1ZbuFI&playsinline=1&rel=0&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3"
-          title="Vistas aéreas de las playas de Guanacaste"
-          allow="autoplay; encrypted-media"
-          frameborder="0"
-          tabindex="-1"></iframe>
+        <div id="heroPlayer" tabindex="-1"></div>
       </div>
       <div class="hero__overlay"></div>
     </div>
@@ -134,40 +128,46 @@
       </div>
       <div class="fleet">
         <article class="vcard">
-          <div class="vcard__badge">Vehículo 1</div>
-          <div class="vcard__icon">🚙</div>
-          <h3>SUV 4x4</h3>
-          <p>Perfecto para caminos hacia playas más remotas y aventuras fuera de la ruta principal.</p>
-          <ul class="vcard__specs">
-            <li><span>👥</span> 4 pasajeros + chófer</li>
-            <li><span>🧳</span> Espacio amplio para equipaje</li>
-            <li><span>❄️</span> Aire acondicionado</li>
-          </ul>
+          <div class="vcard__media"><img src="assets/car-misuv.jpg" alt="Ilustración de un mini SUV" loading="lazy" /></div>
+          <div class="vcard__body">
+            <div class="vcard__badge">Vehículo 1</div>
+            <h3>Mini SUV</h3>
+            <p>Cómodo y ágil, ideal para parejas y familias que quieren moverse con facilidad por la zona.</p>
+            <ul class="vcard__specs">
+              <li><span>👥</span> 4 pasajeros + chófer</li>
+              <li><span>🧳</span> Espacio para equipaje</li>
+              <li><span>❄️</span> Aire acondicionado</li>
+            </ul>
+          </div>
         </article>
         <article class="vcard vcard--featured">
-          <div class="vcard__badge">Vehículo 2</div>
-          <div class="vcard__icon">🚐</div>
-          <h3>Minivan / Buseta</h3>
-          <p>El favorito para familias y grupos: más espacio interior y comodidad en cada traslado.</p>
-          <ul class="vcard__specs">
-            <li><span>👥</span> 4 pasajeros + chófer</li>
-            <li><span>🧳</span> Equipaje extra y asientos amplios</li>
-            <li><span>❄️</span> Aire acondicionado</li>
-          </ul>
+          <div class="vcard__media"><img src="assets/car-sedan1.jpg" alt="Ilustración de un sedán" loading="lazy" /></div>
+          <div class="vcard__body">
+            <div class="vcard__badge">Vehículo 2</div>
+            <h3>Sedán</h3>
+            <p>Confort y estilo para traslados al aeropuerto y desplazamientos cómodos entre hoteles.</p>
+            <ul class="vcard__specs">
+              <li><span>👥</span> 4 pasajeros + chófer</li>
+              <li><span>🧳</span> Maletero cómodo</li>
+              <li><span>❄️</span> Aire acondicionado</li>
+            </ul>
+          </div>
         </article>
         <article class="vcard">
-          <div class="vcard__badge">Vehículo 3</div>
-          <div class="vcard__icon">🚗</div>
-          <h3>Sedán Ejecutivo</h3>
-          <p>Confort y estilo para traslados al aeropuerto y desplazamientos entre hoteles.</p>
-          <ul class="vcard__specs">
-            <li><span>👥</span> 4 pasajeros + chófer</li>
-            <li><span>🧳</span> Maletero cómodo</li>
-            <li><span>❄️</span> Aire acondicionado</li>
-          </ul>
+          <div class="vcard__media"><img src="assets/car-sedan2.jpg" alt="Ilustración de un sedán" loading="lazy" /></div>
+          <div class="vcard__body">
+            <div class="vcard__badge">Vehículo 3</div>
+            <h3>Sedán</h3>
+            <p>Una opción más para grupos pequeños: un traslado tranquilo, puntual y seguro.</p>
+            <ul class="vcard__specs">
+              <li><span>👥</span> 4 pasajeros + chófer</li>
+              <li><span>🧳</span> Maletero cómodo</li>
+              <li><span>❄️</span> Aire acondicionado</li>
+            </ul>
+          </div>
         </article>
       </div>
-      <p class="fleet__note">Disponibilidad sujeta a reserva previa. Confirme su vehículo por WhatsApp.</p>
+      <p class="fleet__note">¿Necesita un <strong>4x4</strong>? Pregunte por disponibilidad. Toda reserva se confirma por WhatsApp.</p>
     </div>
   </section>
 
@@ -252,9 +252,9 @@
       </div>
       <a href="https://wa.me/50688015925" target="_blank" rel="noopener" class="footer__wa">💬 WhatsApp: +506 8801 5925</a>
       <p class="footer__credits">
-        Fotografías de Wikimedia Commons (CC BY / CC BY-SA): Jarle Naustvik, Tamarindowiki,
-        Guacamolio, Rômulo Gama Ferreira, El Pantera, WClarke. Video aéreo: SkyView · Swann
-        Junction (YouTube).
+        Fotografías de playas: Wikimedia Commons (CC BY / CC BY-SA) — Jarle Naustvik,
+        Tamarindowiki, Guacamolio, Rômulo Gama Ferreira, El Pantera, WClarke.
+        Ilustraciones de vehículos generadas a medida. Video aéreo: Todd Swint (YouTube).
       </p>
       <p class="footer__copy">© <span id="year"></span> Transporte Privado Guanacaste · Costa Rica.</p>
     </div>
@@ -264,6 +264,6 @@
   <a href="https://wa.me/50688015925?text=Hola%20Samuel%2C%20me%20gustar%C3%ADa%20reservar%20un%20viaje%20de%20transporte%20privado%20en%20Guanacaste"
      target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">💬</a>
 
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
