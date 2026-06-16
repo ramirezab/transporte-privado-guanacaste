@@ -1,6 +1,44 @@
 /* ===== Transiciones entre páginas (View Transitions API) ===== */
 @view-transition { navigation: auto; }
 
+/* ===== Botón de tema (sol/luna) ===== */
+.theme-toggle {
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--bg-alt); color: var(--ink); cursor: pointer; font-size: 1.05rem;
+  display: grid; place-items: center; line-height: 1; transition: .25s ease; flex: none;
+}
+.theme-toggle:hover { border-color: var(--aqua); transform: translateY(-1px); }
+
+/* ===== Modo oscuro ===== */
+html[data-theme="dark"] {
+  --ink: #e8f0f1;
+  --muted: #9db1b4;
+  --deep: #eaf5f3;
+  --ocean: #4fd6c8;
+  --line: #21383c;
+  --bg: #0c1a1d;
+  --bg-alt: #102327;
+  --shadow: 0 24px 55px -28px rgba(0,0,0,.75);
+}
+html[data-theme="dark"] body { background: var(--bg); color: var(--ink); }
+html[data-theme="dark"] .nav { background: rgba(12,26,29,.86); border-bottom-color: var(--line); }
+html[data-theme="dark"] .nav__links a { color: var(--ink); }
+html[data-theme="dark"] .nav__links { background: var(--bg-alt); }
+html[data-theme="dark"] .feature,
+html[data-theme="dark"] .vcard,
+html[data-theme="dark"] .faq__item,
+html[data-theme="dark"] .dfilter,
+html[data-theme="dark"] .tdetail__highlights { background: #15292e; border-color: var(--line); }
+html[data-theme="dark"] .vcard__specs li,
+html[data-theme="dark"] .tdetail__note { background: #0c1a1d; }
+html[data-theme="dark"] .lang-toggle { background: #0c1a1d; border-color: var(--line); }
+html[data-theme="dark"] .lang-toggle button { color: var(--muted); }
+html[data-theme="dark"] .dfilter { color: var(--muted); }
+html[data-theme="dark"] .feature__icon { background: linear-gradient(140deg, rgba(46,196,182,.22), rgba(0,109,119,.2)); }
+html[data-theme="dark"] .backtop { background: #15292e; color: var(--teal-light); }
+html[data-theme="dark"] .vcard__badge { background: rgba(46,196,182,.2); color: var(--teal-light); }
+html[data-theme="dark"] .section__sub strong { color: var(--teal-light); }
+
 /* ===== Barra de progreso de scroll ===== */
 .scrollbar {
   position: fixed; top: 0; left: 0; height: 4px; width: 0;

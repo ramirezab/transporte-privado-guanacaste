@@ -2,6 +2,30 @@
 (function () {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // --- Modo oscuro ---
+  const root = document.documentElement;
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  const navRight = document.querySelector('.nav__right');
+  if (navRight) {
+    const tbtn = document.createElement('button');
+    tbtn.className = 'theme-toggle';
+    tbtn.type = 'button';
+    tbtn.setAttribute('aria-label', 'Modo oscuro / claro');
+    navRight.insertBefore(tbtn, navRight.firstChild);
+    const applyTheme = (t) => {
+      root.setAttribute('data-theme', t);
+      tbtn.textContent = t === 'dark' ? '☀️' : '🌙';
+      tbtn.setAttribute('aria-pressed', String(t === 'dark'));
+      if (metaTheme) metaTheme.setAttribute('content', t === 'dark' ? '#0c1a1d' : '#00a39a');
+    };
+    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+    tbtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      applyTheme(next);
+    });
+  }
+
   // --- Barra de progreso de scroll ---
   const bar = document.createElement('div');
   bar.className = 'scrollbar';
